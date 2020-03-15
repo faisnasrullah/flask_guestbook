@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap-grid.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap-reboot.min.css')}}"
+    />
+    <title>Index Page</title>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 50px;">
+      <div class="jumbotron">
+        <h1 class="display-4">Guest Book</h1>
+        <p class="lead">
+          <a
+            class="btn btn-primary btn-md"
+            href="{{ url_for('signin')}}"
+            role="button"
+            >Sign The Guest Book</a
+          >
+        </p>
+      </div>
+      {% for r in result %}
+      <div class="page-header">
+        <h1>{{ r.username }}</h1>
+      </div>
+      <div class="well">
+        <div class="alert alert-dark" role="alert">
+          {{ r.comment }}
+        </div>
+      </div>
+      <hr />
+      {% endfor %}
+    </div>
+  </body>
+</html>

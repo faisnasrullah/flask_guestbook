@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example Template</title>
+  </head>
+  <body>
+    <h1>Hai {{ user }}</h1>
+
+    {% if user == 'Admin' %}
+    <h2>This is Admin Page</h2>
+    {% else %}
+    <h2>This is Home Page</h2>
+    {% endif %}
+    <hr />
+    {% for link in valLinks %}
+    <a href="{{ link }}" target="_blank">This is links</a><br />
+    {% endfor %}
+  </body>
+</html>

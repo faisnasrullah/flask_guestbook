@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap-grid.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap-reboot.min.css')}}"
+    />
+    <title>Upload File</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload File</h1>
+      <form
+        method="post"
+        enctype="multipart/form-data"
+        action="{{ url_for('upload') }}"
+      >
+        <div class="form-group">
+          <input type="file" class="form-control" name="photo" id="photo" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
